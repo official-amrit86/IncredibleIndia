@@ -14,7 +14,7 @@ export default function DestinationDetails() {
   }
 
   return (
-    <section className="md:p-5 mx-auto w-full relative">
+    <section className="p-5 mx-auto w-full relative">
       {/* Full width Hero Media (Image or Video) */}
       <div className=" mt-22 relative w-full h-auto md:h-auto rounded-2xl overflow-hidden shadow-2xl">
         {destination.video ? (
@@ -55,7 +55,7 @@ export default function DestinationDetails() {
         <div className="bg-gradient-to-r from-indigo-100 via-pink-100 to-purple-100 rounded-2xl shadow-lg p-6 hover:scale-[1.02] transition duration-500">
             <a href="https://www.google.com/maps/@30.704354,76.6984421,15z?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D">
           <h3 className="text-2xl font-bold text-indigo-700 hover:text-purple-600 transition">
-            How to Reach <a href="https://play.google.com/store/apps/details?id=com.whereismytrain.android&hl=en_IN"></a>🚆
+            How to Reach <a href="https://trackmytrain.co.in/">🚆</a>
           </h3>
             </a>
           <p className="mt-3 text-gray-800">{destination.travel}</p>

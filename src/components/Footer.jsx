@@ -1,8 +1,9 @@
 export default function Footer() {
+  
   return (
-    <footer className="bg-indigo-600 text-white mt-5">
+    <footer className="bg-indigo-600 text-white ">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-        
+ 
         {/* About / Benefits */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Why Visit Incredible India?</h3>
@@ -23,6 +24,8 @@ export default function Footer() {
             <li>✈️ International & domestic airports across India</li>
             <li>🛣️ Safe highways with tourist facilities</li>
             <li>📍 Online maps & guides available</li>
+            <li>📲 Phone:+918602310258</li>
+            <li>📧 Email:incredibleindia.org</li>
           </ul>
         </div>
 
@@ -44,4 +47,6 @@ export default function Footer() {
       </div>
     </footer>
   );
+  // 
+
 }

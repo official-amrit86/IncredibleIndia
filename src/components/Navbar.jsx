@@ -80,7 +80,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
         >
           Destinations
         </Link>
-        <Link
+         {/* <Link
           to="/about"
           className="px-3 py-1 rounded-lg transition duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-400 hover:text-white hover:shadow-md"
         >
@@ -91,7 +91,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
           className="px-3 py-1 rounded-lg transition duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-red-400 hover:text-white hover:shadow-md"
         >
           Contact
-        </Link>
+        </Link>  */}
       </div>
 
       {/* Mobile Menu Button */}
@@ -132,7 +132,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
           >
             Destinations
           </Link>
-          <Link
+          {/* <Link
             to="/about"
             onClick={() => setIsOpen(false)}
             className="text-lg font-semibold hover:text-green-500"
@@ -145,7 +145,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             className="text-lg font-semibold hover:text-yellow-500"
           >
             Contact
-          </Link>
+          </Link> */}
         </div>
       )}
     </nav>
