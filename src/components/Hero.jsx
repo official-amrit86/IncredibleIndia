@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
-
+import { destinations } from "../data";
 export default function Hero({ darkMode, setDarkMode }) {
   return (
     <section className="pt-25 relative h-auto w-full flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-xl border-b border-white/20 text-gray-900 px-6 overflow-hidden">
-      <h1
-        className="text-5xl sm:text-4xl md:text-7xl lg:text-8xl font-extrabold drop-shadow-3xl
+      {/*  */}
+      <Link to="/destinations">
+        <h1
+          className="text-5xl sm:text-4xl md:text-7xl lg:text-8xl font-extrabold drop-shadow-3xl
           transform hover:scale-105 transition duration-700
           bg-gradient-to-r from-pink-400 via-blue-600 to-indigo-500
           bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%]"
-      >
-        Explore India’s Wonders ✨
-      </h1>
+        >
+          Explore India’s Wonders ✨
+        </h1>
+      </Link>
 
       {/* Subtexts as Hover Cards */}
       <div className="mt-10 border-x-stone-950  hover:bg-blue-50-500 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl w-full mx-auto">
@@ -23,12 +26,14 @@ export default function Hero({ darkMode, setDarkMode }) {
           "Experience Festivals, Food, and Colours like never before!",
         ].map((text, idx) => (
           <div
-            key={idx}
-            className="p-6 bg-gray-50/50 backdrop-blur-md border border-gray-200 rounded-xl shadow-lg
-              hover:bg-gradient-to-r hover:from-pink-200 hover:via-purple-200 hover:to-indigo-200
-              hover:scale-105 hover:shadow-2xl transition-all duration-500 cursor-pointer text-gray-800"
+          key={idx}
+          className="p-6 bg-gray-50/50 backdrop-blur-md border border-gray-200 rounded-xl shadow-lg
+          hover:bg-gradient-to-r hover:from-pink-200 hover:via-purple-200 hover:to-indigo-200
+          hover:scale-105 hover:shadow-2xl transition-all duration-500 cursor-pointer text-gray-800"
           >
+          <a href="https://www.afsusa.org/countries/india/?creative=&keyword=&matchtype=&network=x&device=c&gad_source=1&gad_campaignid=22708853252&gbraid=0AAAAADs0D___pWf1Ub9FO4MXpTq2A1QKR&gclid=Cj0KCQjwuKnGBhD5ARIsAD19Rsb56FXb5Zsco-2HITUXnYzUAfosfVslejb7X7RD04N_X7GeyESvVyYaAm7-EALw_wcB">
             {text}
+            </a>
           </div>
         ))}
       </div>

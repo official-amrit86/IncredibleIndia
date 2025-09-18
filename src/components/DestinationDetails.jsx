@@ -55,7 +55,7 @@ export default function DestinationDetails() {
         <div className="bg-gradient-to-r from-indigo-100 via-pink-100 to-purple-100 rounded-2xl shadow-lg p-6 hover:scale-[1.02] transition duration-500">
             <a href="https://www.google.com/maps/@30.704354,76.6984421,15z?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D">
           <h3 className="text-2xl font-bold text-indigo-700 hover:text-purple-600 transition">
-            How to Reach <a href="https://trackmytrain.co.in/">🚆</a>
+            How to Reach <a href="https://www.irctc.com/internet-ticketing.php#">🚆</a>
           </h3>
             </a>
           <p className="mt-3 text-gray-800">{destination.travel}</p>

@@ -48,7 +48,7 @@ export default function App() {
             <Route path="/destination/:id" element={<DestinationDetails />} />
           </Routes>
           <Footer />
-        </Router>
+      </Router>
       )}
     </ThemeProvider>
   );

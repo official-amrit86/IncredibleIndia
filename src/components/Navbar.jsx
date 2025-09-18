@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { destinations } from "../data"; // ✅ Fix: import destinations
@@ -34,6 +35,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
       </button>
 
       {/* Search Box */}
+      {/* Search Box */}
       <div className="relative w-full sm:w-80 ml-6">
         <input
           type="text"
@@ -42,23 +44,46 @@ export default function Navbar({ darkMode, setDarkMode }) {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full border rounded-lg pl-10 pr-4 py-2 shadow-md focus:ring-2 focus:ring-indigo-400 focus:outline-none"
         />
-        {/* Icon inside input */}
         <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-500" />
 
-        {/* Dropdown for search results */}
+        {/* Dropdown */}
         {searchTerm && (
-          <div className="absolute mt-2 w-full bg-white shadow-lg rounded-lg border border-gray-200 max-h-60 overflow-y-auto z-50">
+          <div
+            className="fixed left-0 top-16 w-full 
+               bg-white shadow-lg rounded-lg border border-gray-200 
+               max-h-[70vh] overflow-y-auto z-[9999] p-6"
+          >
             {filteredDestinations.length > 0 ? (
-              filteredDestinations.map((place) => (
-                <Link
-                  key={place.id}
-                  to={`/destinations/${place.id}`}
-                  className="block px-4 py-2 text-gray-700 hover:bg-indigo-100"
-                  onClick={() => setSearchTerm("")}
-                >
-                  {place.name}
-                </Link>
-              ))
+              <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {filteredDestinations.map((place) => (
+                  <div
+                    key={place.id}
+                    className="border rounded-lg shadow hover:shadow-lg transition"
+                  >
+                    <Link
+                      to={`/destinations/${place.id}`}
+                      onClick={() => setSearchTerm("")}
+                    >
+                      {/* ✅ DestinationCard style ka short version */}
+                      <Link to={`/destination/${place.id}`}>
+                        <img
+                          src={place.image}
+                          alt={place.name}
+                          className="w-full h-40 object-cover rounded-t-lg"
+                        />
+                      </Link>
+                      <div className="p-3">
+                        <h2 className="font-bold text-lg text-indigo-700">
+                          {place.name}
+                        </h2>
+                        <p className="text-sm text-gray-600">
+                          {place.details.slice(0, 60)}...
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             ) : (
               <p className="px-4 py-2 text-gray-500">No results found 😕</p>
             )}
@@ -80,24 +105,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
         >
           Destinations
         </Link>
-         {/* <Link
-          to="/about"
-          className="px-3 py-1 rounded-lg transition duration-300 hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-400 hover:text-white hover:shadow-md"
-        >
-          About
-        </Link>
-        <Link
-          to="/contact"
-          className="px-3 py-1 rounded-lg transition duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-red-400 hover:text-white hover:shadow-md"
-        >
-          Contact
-        </Link>  */}
       </div>
 
       {/* Mobile Menu Button */}
+      {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 rounded-lg hover:bg-white/20"
+        className="md:hidden p-2 rounded-lg hover:bg-white/20 ml-auto"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -132,20 +146,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
           >
             Destinations
           </Link>
-          {/* <Link
-            to="/about"
-            onClick={() => setIsOpen(false)}
-            className="text-lg font-semibold hover:text-green-500"
-          >
-            About
-          </Link>
-          <Link
-            to="/contact"
-            onClick={() => setIsOpen(false)}
-            className="text-lg font-semibold hover:text-yellow-500"
-          >
-            Contact
-          </Link> */}
         </div>
       )}
     </nav>
